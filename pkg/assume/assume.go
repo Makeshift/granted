@@ -143,7 +143,7 @@ func AssumeCommand(c *cli.Context) error {
 				Config:              config,
 				SectionNameTemplate: saveProfileName,
 				Profiles: []awsconfigfile.SSOProfile{
-					{
+					&awsconfigfile.AccountProfile{
 						SSOStartURL:   profile.SSOStartURL(),
 						SSORegion:     profile.SSORegion(),
 						AccountID:     profile.AWSConfig.SSOAccountID,

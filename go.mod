@@ -12,7 +12,6 @@ require (
 	github.com/aws/aws-sdk-go-v2/service/sso v1.20.5
 	github.com/aws/aws-sdk-go-v2/service/ssooidc v1.23.4
 	github.com/aws/aws-sdk-go-v2/service/sts v1.28.6
-	github.com/pkg/browser v0.0.0-20210911075715-681adbf594b8
 	github.com/pkg/errors v0.9.1
 	github.com/segmentio/ksuid v1.0.4
 	github.com/urfave/cli/v2 v2.25.7
@@ -36,6 +35,7 @@ require (
 	github.com/aws/aws-sdk-go-v2/service/internal/accept-encoding v1.11.2 // indirect
 	github.com/benbjohnson/clock v1.3.5 // indirect
 	github.com/davecgh/go-spew v1.1.2-0.20180830191138-d8f796af33cc // indirect
+	github.com/dlclark/regexp2 v1.11.5 // indirect
 	github.com/google/go-cmp v0.6.0 // indirect
 	github.com/google/uuid v1.6.0 // indirect
 	github.com/huandu/xstrings v1.3.3 // indirect
@@ -94,3 +94,5 @@ require (
 	golang.org/x/text v0.23.0
 	gopkg.in/ini.v1 v1.67.0
 )
+
+replace github.com/common-fate/awsconfigfile v0.10.0 => github.com/makeshift/awsconfigfile v1.1.0
