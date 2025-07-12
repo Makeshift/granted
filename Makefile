@@ -65,4 +65,4 @@ cli-act-prod: go-binary
 	mv ${PREFIX}/bin/dassume.tcsh ${PREFIX}/bin/assume.tcsh
 
 release:
-	GITHUB_TOKEN=$(gh auth token) goreleaser release --clean
+	GITHUB_TOKEN=$$(gh auth token) goreleaser release --clean
