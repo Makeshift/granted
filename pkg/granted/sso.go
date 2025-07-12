@@ -57,6 +57,7 @@ var GenerateCommand = cli.Command{
 		&cli.StringSliceFlag{Name: "source", Usage: "The sources to load AWS profiles from (valid values are: 'aws-sso')", Value: cli.NewStringSlice("aws-sso")},
 		&cli.BoolFlag{Name: "no-credential-process", Usage: "Generate profiles without the Granted credential-process integration"},
 		&cli.BoolFlag{Name: "verbose", Usage: "Enable verbose output", Value: false},
+		&cli.StringFlag{Name: "default-region", Usage: "Set the default region for the generated profiles"},
 		&cli.StringFlag{Name: "sso-session-name", Usage: "Specify the SSO session name to use for the generated profiles", Value: "sso-session"},
 		&cli.StringSliceFlag{Name: "prefer-role", Usage: "In case of duplicate profile names, prefer the profile with a name matching this regex. Can be supplied multiple times."},
 		&cli.StringFlag{Name: "profile-template", Usage: "Specify profile name template", Value: awsconfigfile.DefaultProfileNameTemplate}},
@@ -106,6 +107,7 @@ var GenerateCommand = cli.Command{
 			SSOScopes:           c.StringSlice("sso-scope"),
 			PreferRoles:      c.StringSlice("prefer-role"),
 			Verbose:						 c.Bool("verbose"),
+			DefaultRegion:     c.String("default-region"),
 		}
 
 		for _, s := range c.StringSlice("source") {
@@ -146,6 +148,7 @@ var PopulateCommand = cli.Command{
 		&cli.StringSliceFlag{Name: "prefer-role", Usage: "In case of duplicate profile names, prefer the profile with a name matching this regex. Can be supplied multiple times."},
 		&cli.BoolFlag{Name: "prune", Usage: "Remove any generated profiles with the 'common_fate_generated_from' key which no longer exist"},
 		&cli.BoolFlag{Name: "verbose", Usage: "Enable verbose output", Value: false},
+		&cli.StringFlag{Name: "default-region", Usage: "Set the default region for the generated profiles"},
 		&cli.StringFlag{Name: "profile-template", Usage: "Specify profile name template", Value: awsconfigfile.DefaultProfileNameTemplate},
 		&cli.BoolFlag{Name: "no-credential-process", Usage: "Generate profiles without the Granted credential-process integration"},
 		&cli.StringFlag{Name: "sso-session-name", Usage: "Specify the SSO session name to use for the generated profiles", Value: "sso-session"},
@@ -227,6 +230,7 @@ var PopulateCommand = cli.Command{
 			SSOScopes:           c.StringSlice("sso-scope"),
 			PreferRoles:      c.StringSlice("prefer-role"),
 			Verbose:						 c.Bool("verbose"),
+			DefaultRegion:     c.String("default-region"),
 		}
 
 		for _, s := range c.StringSlice("source") {

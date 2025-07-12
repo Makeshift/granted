@@ -63,3 +63,6 @@ cli-act-prod: go-binary
 	mv ${PREFIX}/bin/dassume ${PREFIX}/bin/assume
 	mv ${PREFIX}/bin/dassume.fish ${PREFIX}/bin/assume.fish
 	mv ${PREFIX}/bin/dassume.tcsh ${PREFIX}/bin/assume.tcsh
+
+release:
+	GITHUB_TOKEN=$(gh auth token) goreleaser release --clean

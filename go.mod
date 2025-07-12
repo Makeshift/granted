@@ -95,4 +95,4 @@ require (
 	gopkg.in/ini.v1 v1.67.0
 )
 
-replace github.com/common-fate/awsconfigfile v0.10.0 => github.com/makeshift/awsconfigfile v1.1.0
+replace github.com/common-fate/awsconfigfile v0.10.0 => github.com/makeshift/awsconfigfile v1.2.0
